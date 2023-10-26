@@ -6,42 +6,77 @@ using UnityEngine.InputSystem;
 public class RunnerController : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
+    public float maxMoveSpeed = 10.0f;
     public float rotationSpeed = 100.0f;
-    Vector2 movementInput;
+    public float maxRotationSpeed = 20.0f;
+    public Transform runnerControllerObject;
+    public bool interacted = false;
     Rigidbody rigidbody;
-    public InputActionAsset devControls;
 
     
-    void Start()
+    void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
-        devControls.Enable();
-        devControls.FindActionMap("Runner dev").FindAction("Move").performed += ctx => OnMove(ctx.ReadValue<Vector2>());
-        devControls.FindActionMap("Runner dev").FindAction("Move").canceled += ctx => OnMove(ctx.ReadValue<Vector2>());
     }
 
     void FixedUpdate()
     {
-        Vector3 moveDirection = new Vector3(movementInput.y, 0.0f, 0.0f);
-        moveDirection.Normalize();
+        Vector3 currentState = runnerControllerObject.localEulerAngles;
+        //Controller is pulled
+        if(interacted){
+        }
+        else {
+            StartCoroutine(ReturnControllerToDefaultPosition(runnerControllerObject));
+        }
+        if(currentState.x != 0.0f){
+            float angleX = (currentState.x > 180) ? currentState.x - 360 : currentState.x;
+            float angleY = (currentState.y > 180) ? currentState.y - 360 : currentState.y;
+            if(angleY > maxRotationSpeed){
+                angleY = maxRotationSpeed;
+                if(angleY > 60.0f){
+                    runnerControllerObject.Rotate(new Vector3(currentState.x, 0, currentState.z), 60.0f);
+                }
+            }
+            if (angleY < -maxRotationSpeed)
+            {
+                angleY = -maxRotationSpeed;
+                if (angleY < -60.0f)
+                {
+                    runnerControllerObject.Rotate(new Vector3(currentState.x, 0, currentState.z), -60.0f);
+                }
+            }
+            Quaternion rotation = Quaternion.Euler(0, rotationSpeed * Time.fixedDeltaTime * angleY, 0);
 
-        if (moveDirection != Vector3.zero)
-        {
-            // Calculate the rotation based on A and D keys
-            Quaternion rotation = Quaternion.Euler(0, rotationSpeed * Time.fixedDeltaTime * movementInput.x, 0);
-
-            // Apply the rotation using Rigidbody
             rigidbody.MoveRotation(rigidbody.rotation * rotation);
-
-            // Calculate the velocity and apply it using Rigidbody
-            Vector3 velocity = transform.right * moveSpeed * -movementInput.y;
+            if(angleX > maxMoveSpeed){
+                angleX = maxMoveSpeed;
+                if(angleX > 60.0f){
+                    runnerControllerObject.Rotate(new Vector3(0, currentState.y, currentState.z), 60.0f);
+                }
+            }
+            if(angleX < -maxMoveSpeed){
+                angleX = -maxMoveSpeed;
+                if(angleX < -60.0f){
+                    runnerControllerObject.Rotate(new Vector3(0, currentState.y, currentState.z), -60.0f);
+                }
+            }
+            Vector3 velocity = transform.forward * moveSpeed * -angleX;
             rigidbody.velocity = velocity;
         }
-    }
 
-    public void OnMove(Vector2 value)
-    {
-        // Called when WASD keys are pressed
-        movementInput = value;
+        IEnumerator ReturnControllerToDefaultPosition(Transform runnerControllerObject) {
+            float duration = 1.0f;
+            float elapsedTime = 0.0f;
+            Quaternion startRotation = runnerControllerObject.localRotation;
+            Quaternion endRotation = Quaternion.Euler(0, 0, 0);
+
+            while (elapsedTime < duration) {
+                runnerControllerObject.localRotation = Quaternion.Slerp(startRotation, endRotation, (elapsedTime / duration));
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            runnerControllerObject.localRotation = endRotation;
+        }
     }
 }
