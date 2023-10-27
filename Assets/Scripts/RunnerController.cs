@@ -11,13 +11,7 @@ public class RunnerController : MonoBehaviour
     public float maxRotationSpeed = 20.0f;
     public Transform runnerControllerObject;
     public bool interacted = false;
-    Rigidbody rigidbody;
-
-    
-    void Awake()
-    {
-        rigidbody = GetComponent<Rigidbody>();
-    }
+    public Rigidbody rigidbody;
 
     void FixedUpdate()
     {
@@ -46,7 +40,6 @@ public class RunnerController : MonoBehaviour
                 }
             }
             Quaternion rotation = Quaternion.Euler(0, rotationSpeed * Time.fixedDeltaTime * angleY, 0);
-
             rigidbody.MoveRotation(rigidbody.rotation * rotation);
             if(angleX > maxMoveSpeed){
                 angleX = maxMoveSpeed;
@@ -78,5 +71,13 @@ public class RunnerController : MonoBehaviour
 
             runnerControllerObject.localRotation = endRotation;
         }
+    }
+
+    public void InteractedTrue(){
+        interacted = true;
+    }
+
+    public void InteractedFalse(){
+        interacted = false;
     }
 }
