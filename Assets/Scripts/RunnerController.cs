@@ -11,7 +11,13 @@ public class RunnerController : MonoBehaviour
     public float maxRotationSpeed = 20.0f;
     public Transform runnerControllerObject;
     public bool interacted = false;
-    public Rigidbody rigidbody;
+    Rigidbody rigidbody;
+
+    
+    void Awake()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
 
     void FixedUpdate()
     {
