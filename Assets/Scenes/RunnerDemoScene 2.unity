@@ -4085,11 +4085,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1749525777638572706, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906630655737596012, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
+      propertyPath: m_Constraints
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3792974577284819338, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967436042489805955, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
+      propertyPath: m_VelocityScale
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967436042489805955, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
+      propertyPath: m_VelocityDamping
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 3967436042489805955, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4158,6 +4170,14 @@ PrefabInstance:
     - target: {fileID: 8211093315683745075, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_Name
       value: Runner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674417829448655167, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674417829448655167, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
