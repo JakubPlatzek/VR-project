@@ -17,11 +17,4 @@ public class RunnerControllerPhysics : MonoBehaviour
     void FixedUpdate(){
         transform.localPosition = originalPosition;
     }
-    public void onInteraction(){
-        // rb.useGravity = true;
-        // rb.isKinematic = true;
-        // rb.drag = 1;
-        // rb.angularDrag = 0.5f;
-        // rb.mass = 10;
-    }
 }

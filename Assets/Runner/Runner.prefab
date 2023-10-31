@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 6698788875993880053}
   - component: {fileID: 1906630655737596012}
   - component: {fileID: 3967436042489805955}
-  - component: {fileID: 3933020259336253915}
   - component: {fileID: 6443231014512708514}
   - component: {fileID: 1749525777638572706}
   m_Layer: 0
@@ -242,7 +241,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3967436042489805955
 MonoBehaviour:
@@ -382,7 +381,7 @@ MonoBehaviour:
   m_VelocityDamping: 0.85
   m_VelocityScale: 0.1
   m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 0.1
+  m_AngularVelocityScale: 1
   m_TrackPosition: 1
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 1.34
@@ -420,29 +419,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &3933020259336253915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070059906806641078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PermittedDisplacementAxes: -1
-  m_ConstrainedAxisDisplacementMode: 1
-  m_TwoHandedRotationMode: 1
-  m_AllowOneHandedScaling: 1
-  m_AllowTwoHandedScaling: 1
-  m_OneHandedScaleSpeed: 0.5
-  m_ThresholdMoveRatioForScale: 0.01
-  m_ClampScaling: 1
-  m_MinimumScaleRatio: 0.25
-  m_MaximumScaleRatio: 2
-  m_ScaleMultiplier: 0.25
 --- !u!59 &6443231014512708514
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -489,7 +465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7070059906806641078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7d04c2083204cc4dbc5da78922119e2, type: 3}
   m_Name: 
@@ -504,7 +480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6295772472716757921}
   - component: {fileID: 4801101244567362620}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
