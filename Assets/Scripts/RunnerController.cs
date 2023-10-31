@@ -13,6 +13,7 @@ public class RunnerController : MonoBehaviour
     public bool interacted = false;
     public bool allowMovement = true;
     public Rigidbody rigidbody;
+    public GameObject player;
     Transform parent;
 
     void Awake(){
@@ -83,10 +84,12 @@ public class RunnerController : MonoBehaviour
 
     public void InteractedTrue(){
         interacted = true;
-        // runnerControllerObject.transform.SetParent(parent);
+        runnerControllerObject.transform.SetParent(rigidbody.gameObject.transform);
+        player.transform.SetParent(rigidbody.gameObject.transform);
     }
 
     public void InteractedFalse(){
         interacted = false;
+        player.transform.SetParent(null);
     }
 }
