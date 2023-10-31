@@ -11,6 +11,7 @@ public class RunnerController : MonoBehaviour
     public float maxRotationSpeed = 20.0f;
     public Transform runnerControllerObject;
     public bool interacted = false;
+    public bool allowMovement = true;
     public Rigidbody rigidbody;
 
     void FixedUpdate()
@@ -24,7 +25,7 @@ public class RunnerController : MonoBehaviour
             // StartCoroutine(ReturnControllerToDefaultPosition(runnerControllerObject));
             runnerControllerObject.GetComponent<Rigidbody>().freezeRotation = true;
         }
-        if(currentState.x != 0.0f){
+        if(currentState.x != 0.0f && allowMovement){
             float angleX = (currentState.x > 180) ? currentState.x - 360 : currentState.x;
             float angleY = (currentState.y > 180) ? currentState.y - 360 : currentState.y;
             if(angleY > maxRotationSpeed){
@@ -58,22 +59,21 @@ public class RunnerController : MonoBehaviour
             Vector3 velocity = transform.forward * moveSpeed * -angleX;
             rigidbody.velocity = velocity;
         }
-
     }
-        IEnumerator ReturnControllerToDefaultPosition(Transform runnerControllerObject) {
-            float duration = 1.0f;
-            float elapsedTime = 0.0f;
-            Quaternion startRotation = runnerControllerObject.localRotation;
-            Quaternion endRotation = Quaternion.Euler(0, 0, 0);
+    IEnumerator ReturnControllerToDefaultPosition(Transform runnerControllerObject) {
+        float duration = 1.0f;
+        float elapsedTime = 0.0f;
+        Quaternion startRotation = runnerControllerObject.localRotation;
+        Quaternion endRotation = Quaternion.Euler(0, 0, 0);
 
-            while (elapsedTime < duration) {
-                runnerControllerObject.localRotation = Quaternion.Slerp(startRotation, endRotation, (elapsedTime / duration));
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-
-            runnerControllerObject.localRotation = endRotation;
+        while (elapsedTime < duration) {
+            runnerControllerObject.localRotation = Quaternion.Slerp(startRotation, endRotation, (elapsedTime / duration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
+
+        runnerControllerObject.localRotation = endRotation;
+    }
 
     public void InteractedTrue(){
         interacted = true;
