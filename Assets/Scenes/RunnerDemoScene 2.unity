@@ -6634,6 +6634,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Complete XR Origin Set Up Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6396743587534923916, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6589785594443461639, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7179462289238023466, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7152,6 +7160,14 @@ PrefabInstance:
     - target: {fileID: 1864005977998783797, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.033074975
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864005977998783797, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
+      propertyPath: m_AngularYLimit.limit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864005977998783797, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
+      propertyPath: m_LowAngularXLimit.limit
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3792974577284819338, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: player
