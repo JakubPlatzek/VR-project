@@ -4083,9 +4083,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3792974577284819338, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 1906630655737596012, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819392109372161498, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4128,40 +4128,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6443231014512708514, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
-      propertyPath: m_Anchor.y
-      value: -0.03
+      propertyPath: m_ConnectedBody
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6443231014512708514, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
-      propertyPath: m_Anchor.z
-      value: -0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 6443231014512708514, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
-      propertyPath: m_Limits.max
-      value: 56.315174
-      objectReference: {fileID: 0}
-    - target: {fileID: 6443231014512708514, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
-      propertyPath: m_Limits.min
-      value: -92.86621
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6443231014512708514, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 1.2325004
+      value: 0.11569999
       objectReference: {fileID: 0}
     - target: {fileID: 6443231014512708514, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -3.3861701
+      value: 0.034400016
       objectReference: {fileID: 0}
     - target: {fileID: 8211093315683745075, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_Name
       value: Runner
       objectReference: {fileID: 0}
     - target: {fileID: 8674417829448655167, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1457
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674417829448655167, guid: 2a94aa134aafea147978ae1c2aa5c529, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0556
+      value: 0.0544
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

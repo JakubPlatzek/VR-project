@@ -13,6 +13,11 @@ public class RunnerController : MonoBehaviour
     public bool interacted = false;
     public bool allowMovement = true;
     public Rigidbody rigidbody;
+    Transform parent;
+
+    void Awake(){
+        parent = runnerControllerObject.transform.parent;
+    }
 
     void FixedUpdate()
     {
@@ -23,6 +28,7 @@ public class RunnerController : MonoBehaviour
         }
         else {
             // StartCoroutine(ReturnControllerToDefaultPosition(runnerControllerObject));
+            runnerControllerObject.localEulerAngles = Vector3.zero;
             runnerControllerObject.GetComponent<Rigidbody>().freezeRotation = true;
         }
         if(currentState.x != 0.0f && allowMovement){
@@ -77,6 +83,7 @@ public class RunnerController : MonoBehaviour
 
     public void InteractedTrue(){
         interacted = true;
+        // runnerControllerObject.transform.SetParent(parent);
     }
 
     public void InteractedFalse(){

@@ -121,7 +121,6 @@ GameObject:
   - component: {fileID: 1906630655737596012}
   - component: {fileID: 3967436042489805955}
   - component: {fileID: 6443231014512708514}
-  - component: {fileID: 1749525777638572706}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -138,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 7070059906806641078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0004, z: -0.0003}
+  m_LocalPosition: {x: 0, y: 0.1457, z: 0.0556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,10 +427,10 @@ HingeJoint:
   m_GameObject: {fileID: 7070059906806641078}
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0.12, z: 0.04}
+  m_Anchor: {x: 0, y: -0.03, z: -0.02}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.9917035, y: 1.2325004, z: -3.3477702}
+  m_ConnectedAnchor: {x: 0.9917035, y: 1.2325004, z: -3.3861701}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -447,8 +446,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -243.19778
-    max: -108.73008
+    min: -92.86621
+    max: 56.315174
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -458,18 +457,6 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1749525777638572706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070059906806641078}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d04c2083204cc4dbc5da78922119e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7626489356598777041
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +561,7 @@ MonoBehaviour:
   maxRotationSpeed: 8
   runnerControllerObject: {fileID: 8674417829448655167}
   interacted: 0
-  allowMovement: 0
+  allowMovement: 1
   rigidbody: {fileID: 5042988569123202219}
 --- !u!1 &8225269103282761403
 GameObject:
