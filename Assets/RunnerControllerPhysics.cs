@@ -5,21 +5,23 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RunnerControllerPhysics : MonoBehaviour
 {
+    Vector3 originalPosition;
     Rigidbody rb;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-    }
-    public void onInteraction(){
-        rb.useGravity = true;
-        rb.isKinematic = true;
-        rb.drag = 1;
-        rb.angularDrag = 0.5f;
-        rb.mass = 10;
+        transform.localPosition = originalPosition;
     }
 
-    void onTriggerEnter(Collider other){
-        print("Trigger enter");
+    void FixedUpdate(){
+        transform.localPosition = originalPosition;
+    }
+    public void onInteraction(){
+        // rb.useGravity = true;
+        // rb.isKinematic = true;
+        // rb.drag = 1;
+        // rb.angularDrag = 0.5f;
+        // rb.mass = 10;
     }
 }

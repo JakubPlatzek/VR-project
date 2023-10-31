@@ -18,9 +18,11 @@ public class RunnerController : MonoBehaviour
         Vector3 currentState = runnerControllerObject.localEulerAngles;
         //Controller is pulled
         if(interacted){
+            runnerControllerObject.GetComponent<Rigidbody>().freezeRotation = false;
         }
         else {
-            StartCoroutine(ReturnControllerToDefaultPosition(runnerControllerObject));
+            // StartCoroutine(ReturnControllerToDefaultPosition(runnerControllerObject));
+            runnerControllerObject.GetComponent<Rigidbody>().freezeRotation = true;
         }
         if(currentState.x != 0.0f){
             float angleX = (currentState.x > 180) ? currentState.x - 360 : currentState.x;
@@ -57,6 +59,7 @@ public class RunnerController : MonoBehaviour
             rigidbody.velocity = velocity;
         }
 
+    }
         IEnumerator ReturnControllerToDefaultPosition(Transform runnerControllerObject) {
             float duration = 1.0f;
             float elapsedTime = 0.0f;
@@ -71,7 +74,6 @@ public class RunnerController : MonoBehaviour
 
             runnerControllerObject.localRotation = endRotation;
         }
-    }
 
     public void InteractedTrue(){
         interacted = true;
