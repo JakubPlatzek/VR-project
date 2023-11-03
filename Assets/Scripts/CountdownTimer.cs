@@ -4,7 +4,9 @@ using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
+    public WristUI wristUI;
     public TextMeshProUGUI countdownText;
+    public TextMeshProUGUI errorText;
     public TextMeshProUGUI buttonText;
     private float countdownTime = 10 * 60; 
     private bool isCountdownActive = false;
@@ -15,18 +17,24 @@ public class CountdownTimer : MonoBehaviour
     {
         if (isCountdownActive)
         {
-            StopCountdown();
+            if (wristUI.CheckOrder()) {
+                StopCountdown();
+                wristUI.ClearOrder();
+            } else {
+                errorText.text = "Order isn't complete!";
+            }
         }
         else
         {
             StartCountdown();
+            wristUI.GenerateOrder();
         }
     }
 
     private void StartCountdown()
     {
         countdownCoroutine = StartCoroutine(CountdownCoroutine());
-        buttonText.text = "Finish order";
+        buttonText.text = "Check order";
     }
 
     private void StopCountdown()
