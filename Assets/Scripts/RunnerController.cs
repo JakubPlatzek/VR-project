@@ -14,11 +14,7 @@ public class RunnerController : MonoBehaviour
     public bool allowMovement = true;
     public Rigidbody rigidbody;
     public GameObject player;
-    Transform parent;
-
-    void Awake(){
-        parent = runnerControllerObject.transform.parent;
-    }
+    public Transform controllerParent;
 
     void FixedUpdate()
     {
@@ -28,7 +24,6 @@ public class RunnerController : MonoBehaviour
             runnerControllerObject.GetComponent<Rigidbody>().freezeRotation = false;
         }
         else {
-            // StartCoroutine(ReturnControllerToDefaultPosition(runnerControllerObject));
             runnerControllerObject.localEulerAngles = Vector3.zero;
             runnerControllerObject.GetComponent<Rigidbody>().freezeRotation = true;
         }
@@ -67,24 +62,10 @@ public class RunnerController : MonoBehaviour
             rigidbody.velocity = velocity;
         }
     }
-    IEnumerator ReturnControllerToDefaultPosition(Transform runnerControllerObject) {
-        float duration = 1.0f;
-        float elapsedTime = 0.0f;
-        Quaternion startRotation = runnerControllerObject.localRotation;
-        Quaternion endRotation = Quaternion.Euler(0, 0, 0);
-
-        while (elapsedTime < duration) {
-            runnerControllerObject.localRotation = Quaternion.Slerp(startRotation, endRotation, (elapsedTime / duration));
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        runnerControllerObject.localRotation = endRotation;
-    }
 
     public void InteractedTrue(){
         interacted = true;
-        runnerControllerObject.transform.SetParent(rigidbody.gameObject.transform);
+        runnerControllerObject.transform.SetParent(controllerParent.gameObject.transform);
         player.transform.SetParent(rigidbody.gameObject.transform);
     }
 
