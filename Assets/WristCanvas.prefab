@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 8384250928576354084}
   - component: {fileID: 3603934047292326584}
   - component: {fileID: 5228059705514886104}
+  - component: {fileID: 3390382355180119765}
   m_Layer: 5
   m_Name: WristCanvas
   m_TagString: Untagged
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3603934047292326584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +274,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &3390382355180119765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497120351961135409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bb436cbbf9d49188abbedc68e31566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputActionAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1691696507690360255
 GameObject:
   m_ObjectHideFlags: 0

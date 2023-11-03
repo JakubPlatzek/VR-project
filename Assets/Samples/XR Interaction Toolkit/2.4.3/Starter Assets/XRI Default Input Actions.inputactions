@@ -403,6 +403,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "WristMenu",
+                    "type": "Button",
+                    "id": "c3e52fbc-9d6d-4512-8d62-f238f1335d66",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -612,6 +621,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Aim Flags",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05ed3816-d4cb-497a-9b98-b89e3391cb6f",
+                    "path": "<XRController>{LeftHand}/menuButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WristMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
