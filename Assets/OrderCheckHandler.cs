@@ -7,6 +7,8 @@ public class OrderCheckHandler : MonoBehaviour
     BoxCollider boxCollider;
     public List<GameObject> boxes = new List<GameObject>();
 
+    public WristUI wristUI;
+
     void Awake()
     {
         boxCollider = GetComponent<BoxCollider>();
@@ -14,11 +16,24 @@ public class OrderCheckHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        boxes.Add(other.gameObject);
+        foreach (var order in wristUI.orderPositions) {
+            if (other.gameObject.CompareTag(order.Key)) {
+                wristUI.RefreshOrder(other.gameObject.tag, -1);
+                boxes.Add(other.gameObject);
+                return;
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        boxes.Remove(other.gameObject);
+
+        foreach (var order in wristUI.orderPositions) {
+            if (other.gameObject.CompareTag(order.Key)) {
+                boxes.Remove(other.gameObject);
+                wristUI.RefreshOrder(other.gameObject.tag, 1);
+                return;
+            }
+        }
     }
 }

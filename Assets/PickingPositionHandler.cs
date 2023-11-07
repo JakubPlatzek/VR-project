@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickingPositionHandler : MonoBehaviour
 {
 
-    BoxCollider boxCollider;
+    public BoxCollider triggerCollider;
+    public List<BoxCollider> boxColliders = new List<BoxCollider>();
     public int maxAmountOfBoxes = 10;
     public List<GameObject> boxes = new List<GameObject>();
     
     void Awake() 
     {
-        boxCollider = GetComponent<BoxCollider>();
         RefillPosition();
     }
 
@@ -34,11 +35,22 @@ public class PickingPositionHandler : MonoBehaviour
 
     public void RefillPosition()
     {
+        foreach (var box in boxColliders) {
+            box.isTrigger = true;
+        }
         EmptyPosition();
         for (var i = 0; i < maxAmountOfBoxes; i++) {
-            Vector3 pos = new Vector3(Random.Range(boxCollider.bounds.min.x, boxCollider.bounds.max.x), boxCollider.bounds.max.y, Random.Range(boxCollider.bounds.min.z, boxCollider.bounds.max.z));
+            Vector3 pos = new Vector3(Random.Range(triggerCollider.bounds.min.x, triggerCollider.bounds.max.x), triggerCollider.bounds.max.y, Random.Range(triggerCollider.bounds.min.z, triggerCollider.bounds.max.z));
             GameObject box = Instantiate(Resources.Load($"boxes/{this.gameObject.tag}") as GameObject, pos, Quaternion.identity);
             box.transform.SetParent(this.transform);
+        }
+
+        Invoke("DisableColliders", 2.0f);
+    }
+
+    void DisableColliders() {
+        foreach (var box in boxColliders) {
+            box.isTrigger = false;
         }
     }
 
@@ -48,5 +60,7 @@ public class PickingPositionHandler : MonoBehaviour
         {
             Destroy(box);
         }
+
+        boxes.Clear();
     }
 }

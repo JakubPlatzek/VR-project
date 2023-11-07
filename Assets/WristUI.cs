@@ -83,4 +83,21 @@ public class WristUI : MonoBehaviour
 
         return orderPositions.Count == 0; 
     }
+
+    public void RefreshOrder(string tag, int amount)
+    {
+
+        if (orderPositions.ContainsKey(tag))
+        {
+            orderPositions[tag] += amount;
+        } else {
+            orderPositions.Add(tag, amount);
+        }
+
+        orderText.text = "";
+        foreach (var orderPosition in orderPositions)
+        {
+            orderText.text += $"{orderPosition.Key} - {orderPosition.Value}\n";
+        }
+    }
 }
