@@ -30,6 +30,5 @@ public class boxManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        print("health " + health);
     }
 }
