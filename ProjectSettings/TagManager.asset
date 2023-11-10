@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Anchor
+  - A1
+  - B1
+  - B2
+  - C3
+  - A5
   layers:
   - Default
   - TransparentFX
