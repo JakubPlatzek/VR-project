@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9028975554203206862}
   - component: {fileID: 4372563643115630791}
   - component: {fileID: 7349995164648997907}
-  - component: {fileID: 5108453741542844495}
+  - component: {fileID: 389962860195998868}
   m_Layer: 0
   m_Name: RunnerPallet
   m_TagString: Untagged
@@ -82,7 +82,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5108453741542844495
+--- !u!114 &389962860195998868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,7 +91,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3159501201620691703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8430c8d885a487e897d860cc263df1, type: 3}
+  m_Script: {fileID: 11500000, guid: 65538a5d5309fea428322574606fa3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   boxes: []
+  wristUI: {fileID: 0}
