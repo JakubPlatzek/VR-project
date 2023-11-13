@@ -7,6 +7,7 @@ public class MoneyHandler : MonoBehaviour
 {
     public int money;
     public TextMeshProUGUI moneyText;
+    public GameOverManager gameOverManager;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +19,9 @@ public class MoneyHandler : MonoBehaviour
     {
         money += newMoney;
         moneyText.text = "Money: $" + money.ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(money < 0)
+        {
+            gameOverManager.ShowGameOver();
+        }
     }
 }
