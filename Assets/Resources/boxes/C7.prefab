@@ -694,3 +694,4 @@ MonoBehaviour:
   health: 40
   damageThreshold: 4
   smokeEffectPrefab: {fileID: 3950467797763240587, guid: 121c3aa6664d944a8994392043a01975, type: 3}
+  moneyHandler: {fileID: 1038926485654632935, guid: 00738de824bc646b1b38f1b6135de006, type: 3}
