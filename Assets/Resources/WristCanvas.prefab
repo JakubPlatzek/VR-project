@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58180d2704bc448a88af6b8ad95c2b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wristUI: {fileID: 3390382355180119765}
+  wristUI: {fileID: 0}
   countdownText: {fileID: 3136695616307211974}
   errorText: {fileID: 5716299776404055806}
   buttonText: {fileID: 4348057871048850174}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 8384250928576354084}
   - component: {fileID: 3603934047292326584}
   - component: {fileID: 5228059705514886104}
-  - component: {fileID: 3390382355180119765}
+  - component: {fileID: 8046247367889533232}
   m_Layer: 5
   m_Name: WristCanvas
   m_TagString: Untagged
@@ -278,7 +278,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &3390382355180119765
+--- !u!114 &8046247367889533232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,16 +287,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1497120351961135409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1bb436cbbf9d49188abbedc68e31566, type: 3}
+  m_Script: {fileID: 11500000, guid: 5eb4455b43d3cab469f4a03e1d1fbb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputActionAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  boxPositions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  inputActionAsset: {fileID: -944628639613478452, guid: da2b439d1a2de5c46a4f428f8cf4fe19, type: 3}
+  boxPositions: []
   maxNumberOfPositions: 5
   maxNumberOfBoxes: 10
   runnerBoxCollider: {fileID: 0}
