@@ -11,6 +11,12 @@ public class CountdownTimer : MonoBehaviour
     private float countdownTime = 10 * 60; 
     private bool isCountdownActive = false;
     private Coroutine countdownCoroutine;
+    MoneyHandler moneyHandler;
+
+    void Awake() 
+    {
+        moneyHandler = GameObject.Find("MoneyCounter").GetComponent<MoneyHandler>();
+    }
 
     // Call this method when the button is pressed
     public void ToggleCountdown()
@@ -19,6 +25,7 @@ public class CountdownTimer : MonoBehaviour
         {
             if (wristUI.CheckOrder()) {
                 StopCountdown();
+                moneyHandler.SetMoney(Random.Range(100, 300));
                 wristUI.ClearOrder();
             } else {
                 errorText.text = "Order isn't complete!";
