@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class OrderCheckHandler : MonoBehaviour
 {
+    public List<GameObject> orderBoxes = new List<GameObject>();
     public List<GameObject> boxes = new List<GameObject>();
 
     public WristUI wristUI;
 
     private void OnTriggerEnter(Collider other)
     {
+        boxes.Add(other.gameObject);
         foreach (var order in wristUI.orderPositions) {
             if (other.gameObject.CompareTag(order.Key)) {
                 wristUI.RefreshOrder(other.gameObject.tag, -1);
-                boxes.Add(other.gameObject);
+                orderBoxes.Add(other.gameObject);
                 return;
             }
         }
@@ -21,10 +23,10 @@ public class OrderCheckHandler : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
+        boxes.Remove(other.gameObject);
         foreach (var order in wristUI.orderPositions) {
             if (other.gameObject.CompareTag(order.Key)) {
-                boxes.Remove(other.gameObject);
+                orderBoxes.Remove(other.gameObject);
                 wristUI.RefreshOrder(other.gameObject.tag, 1);
                 return;
             }
