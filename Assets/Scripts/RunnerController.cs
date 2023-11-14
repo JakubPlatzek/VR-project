@@ -15,6 +15,7 @@ public class RunnerController : MonoBehaviour
     public Rigidbody rigidbody;
     public GameObject player;
     public Transform controllerParent;
+    public OrderCheckHandler orderCheckHandler;
 
     void FixedUpdate()
     {
@@ -65,12 +66,14 @@ public class RunnerController : MonoBehaviour
 
     public void InteractedTrue(){
         interacted = true;
+        orderCheckHandler.StickBoxes(true);
         runnerControllerObject.transform.SetParent(controllerParent.gameObject.transform);
         player.transform.SetParent(rigidbody.gameObject.transform);
     }
 
     public void InteractedFalse(){
         interacted = false;
+        orderCheckHandler.StickBoxes(false);
         player.transform.SetParent(null);
     }
 }

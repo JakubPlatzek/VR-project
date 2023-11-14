@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class OrderCheckHandler : MonoBehaviour
 {
-    BoxCollider boxCollider;
     public List<GameObject> boxes = new List<GameObject>();
 
     public WristUI wristUI;
-
-    void Awake()
-    {
-        boxCollider = GetComponent<BoxCollider>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +28,14 @@ public class OrderCheckHandler : MonoBehaviour
                 wristUI.RefreshOrder(other.gameObject.tag, 1);
                 return;
             }
+        }
+    }
+
+    public void StickBoxes(bool status){
+        foreach (var box in boxes) {
+            box.transform.SetParent(status ? transform.parent : null);
+            box.GetComponent<boxManager>().stick = status;
+            box.GetComponent<boxManager>().positionToStickTo = box.transform.localPosition;
         }
     }
 }

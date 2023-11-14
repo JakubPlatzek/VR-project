@@ -1545,10 +1545,30 @@ PrefabInstance:
       propertyPath: wristUI
       value: 
       objectReference: {fileID: 437766760}
+    - target: {fileID: 4923343047744219630, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: boxes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923343047744219630, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: boxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923343047744219630, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: boxes.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923343047744219630, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: boxes.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6423259260910133728, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 227116733}
+    - target: {fileID: 6423259260910133728, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: orderCheckHandler
+      value: 
+      objectReference: {fileID: 1120690576}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

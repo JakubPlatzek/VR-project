@@ -10,6 +10,9 @@ public class boxManager : MonoBehaviour
     public float damageThreshold = 4f;
     public GameObject smokeEffectPrefab;
 
+    public bool stick = false;
+    public Vector3 positionToStickTo = new Vector3(0, 0, 0);
+
     bool allowCollision = false;
     MoneyHandler moneyHandler;
 
@@ -17,6 +20,12 @@ public class boxManager : MonoBehaviour
         moneyHandler = GameObject.Find("MoneyCounter").GetComponent<MoneyHandler>();
         // have to do this, otherwise boxes get destroyed on spawn and you lose money
         Invoke("TriggerBoxCollider", 2.0f);
+    }
+
+    void FixedUpdate(){
+        if(stick){
+            transform.localPosition = positionToStickTo;
+        }
     }
 
     void TriggerBoxCollider() {
