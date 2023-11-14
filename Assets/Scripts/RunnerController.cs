@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,16 @@ public class RunnerController : MonoBehaviour
     public GameObject player;
     public Transform controllerParent;
     public OrderCheckHandler orderCheckHandler;
+    float yValue = 0.0f;
 
+    void Awake(){
+        yValue = transform.position.y;
+    }
     void FixedUpdate()
     {
+        if(Mathf.Abs(transform.position.y) != Mathf.Abs(yValue)){
+            transform.position = new Vector3(transform.position.x, yValue, transform.position.z);
+        }
         Vector3 currentState = runnerControllerObject.localEulerAngles;
         //Controller is pulled
         if(interacted){
