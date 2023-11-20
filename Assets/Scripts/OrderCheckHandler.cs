@@ -34,10 +34,12 @@ public class OrderCheckHandler : MonoBehaviour
     }
 
     public void StickBoxes(bool status){
-        foreach (var box in boxes) {
-            box.transform.SetParent(status ? transform.parent : null);
-            box.GetComponent<boxManager>().stick = status;
-            box.GetComponent<boxManager>().positionToStickTo = box.transform.localPosition;
+        if(boxes.Count > 0){
+            foreach (var box in boxes) {
+                box.transform.SetParent(status ? transform.parent : null);
+                box.GetComponent<boxManager>().stick = status;
+                box.GetComponent<boxManager>().positionToStickTo = box.transform.localPosition;
+            }
         }
     }
 }

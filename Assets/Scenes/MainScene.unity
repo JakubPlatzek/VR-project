@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31401366, g: 0.55090225, b: 0.82295984, a: 1}
+  m_IndirectSpecularColor: {r: 0.3130029, g: 0.5501603, b: 0.8220557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1952,10 +1952,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2630289980094166475, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2674264583983988734, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.75
@@ -2004,49 +2000,31 @@ PrefabInstance:
       propertyPath: wristUI
       value: 
       objectReference: {fileID: 437766760}
+    - target: {fileID: 4988082577425726145, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: m_Size.y
+      value: 0.119562835
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988082577425726145, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: m_Center.x
+      value: -2.5185479e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988082577425726145, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: m_Center.y
+      value: 0.03521928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988082577425726145, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
+      propertyPath: m_Center.z
+      value: -0.015000002
+      objectReference: {fileID: 0}
     - target: {fileID: 6423259260910133728, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 227116733}
-    - target: {fileID: 7404207149649698492, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5074332957979606586, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1570609517}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
---- !u!1 &1570609516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5074332957979606586, guid: a40dab8cbb0990f46a71235274a86494, type: 3}
-  m_PrefabInstance: {fileID: 1570609515}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1570609517
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570609516}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 6d51a84963428cf4b9aaabea531eb90f, type: 3}
 --- !u!1 &1598269138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,7 +2255,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3e-45, y: 9.4e-44, z: 0, w: -60.39395}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 2.1139e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
